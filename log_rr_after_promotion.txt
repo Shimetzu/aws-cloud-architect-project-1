@@ -1,0 +1,18 @@
+MySQL [udacity]> INSERT INTO example (id, name) VALUES (2,"example 2");
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    9
+Current database: udacity
+
+Query OK, 1 row affected (0.02 sec)
+
+MySQL [udacity]> SELECT * FROM example;
++------+-----------+
+| id   | name      |
++------+-----------+
+|    1 | example 1 |
+|    2 | example 2 |
++------+-----------+
+2 rows in set (0.00 sec)
+
+MySQL [udacity]>

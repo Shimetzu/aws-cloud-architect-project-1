@@ -1,0 +1,21 @@
+Minimum RTO for a single AZ outage
+- 00:00: Problem happens.
+- 00:01-00:02: AZ Multizone change zone automaticaly.
+- 00:01-00:02: Problem fixed.
+  Minimum RTO: +-2 minutes
+
+Minimum RTO for a single region outage
+- 00:00: Problem happens.
+- 00:01: Alert is triggered.
+- 00:01: Wake up call.
+- 00:15: Staff is checking the problem.
+- 00:20: Staff change EC2 pointing from active database to the read replica in other region.
+- 00:30: From read replica to main database.
+- 00:30: Problem fixed.
+  Minimum RTO: +- 30minutes
+
+Minimum RPO for a single AZ outage
+	0 because the AZ Multi avoid data loss, the systems changes from one instance to another without losing data.
+
+Minimum RPO for a single region outage
+	0 because the read replica is still working, we just have to point to this and make it the main one.
